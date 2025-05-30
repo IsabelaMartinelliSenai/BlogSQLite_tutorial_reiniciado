@@ -5,8 +5,11 @@ Node.js ( 11.4.1 ) + MySQL + Express + EJS
 Npm
 ## Instalação 
 1 - Instalar o Nodejs de acordo com o sistema operacional
+
 2 - Clonar este repositório com git clone: https://github.com/DenadaiSenai/Login 
+
 3 - Instalar os módulos utilizados pelo aplicativo npm install
+
 4 - Instalar o MySQL e criar o banco de dados (mydb) e executar o arquivo mydb.sql na pasta SQL, no MySQL
 Ajuste o usuário e a senha do banco de dados para a conexão do Nodejs, no arquivo 'app.js' (
 Login/app.js
@@ -20,8 +23,11 @@ Login/app.js
 )
 ## Execução e Teste
 5 - Executar o aplicativo node app.js
+
 6 – Verificar qual aonde está a porta e executar o Browser
+
 7- Entrar na porta do Local Host
+
 8 - Testar o aplicativo
 Windows 10 Education 22H2
 XAMPP - v3.3.0 (Apache + MySQL)
