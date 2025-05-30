@@ -1,6 +1,6 @@
 # Blog em node.js
 Este é um projeto de Blog
-# Pré requisitos
+## Pré requisitos
 Node.js ( 11.4.1 ) + MySQL + Express + EJS
 Npm
 ## Instalação 
@@ -45,5 +45,5 @@ GET / dasboard : Área restrita. Exibe todos usuários cadastrados
 GET / usuários : Renderiza a tabela parcial (usertable.ejs) com todos os users
 GET / register_failed : Mensagem de Erro ou falha no cadastro
 GET / invalid_login :  Exibe erro no login
-# Autor
+## Autor
  Marcio Denadai - Instrutor de Formação Profissional / SENAI 'Celso Charuri' - Sumaré - SP 5.12
