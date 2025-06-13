@@ -21,26 +21,27 @@ const createDisplayMsgError = (mensagem) => {
 
 /* ---------------- FUNÇÃO PARA VERIFICAR O NOME ----------------------- */
 const checkNome = () => {
-  const nomeRegex = /^[A-Za-zÀ-ÿ\s]+$/;
-  return nomeRegex.test(nome.value);
+  const nomeRegex = /^[A-Za-zÀ-ÿ\s'-]+$/;
+  return nomeRegex.test(nome.value.trim());
 };
 /* --------------------------------------------------------------------- */
 
 /* ---------- FUNÇÃO PARA VERIFICAR O EMAIL --------------------- */
-const checkEmail = (email) => {
-  const partesEmail = email.split("@");
-
-  if (
-    (partesEmail.length === 2 &&
-      partesEmail[1].toLowerCase() === "gmail.com") ||
-    (partesEmail.length === 2 &&
-      partesEmail[1].toLowerCase() === "outlook.com") ||
-    (partesEmail.length === 2 && partesEmail[1].toLowerCase() === "hotmail.com")
-  ) {
-    return true;
-  } else {
+const checkEmail = (emailValue) => {
+  const emailTrimmed = emailValue.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailTrimmed)) {
     return false;
   }
+
+  const partesEmail = emailTrimmed.split("@");
+  if (partesEmail.length === 2) {
+    const domain = partesEmail[1].toLowerCase();
+    const allowedDomains = ["gmail.com", "outlook.com", "hotmail.com", "icloud.com", "yahoo.com"];
+
+    return true;
+  }
+  return false;
 };
 /* --------------------------------------------------------------------- */
 

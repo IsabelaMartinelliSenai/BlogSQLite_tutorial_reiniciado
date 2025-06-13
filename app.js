@@ -183,10 +183,15 @@ app.post("/cadastro", (req, res) => {
             console.error("Erro ao inserir usuário no banco: ", err.message);
             return res.status(500).json({
               success: false,
-              message: "Usuário cadastrado com sucesso!",
-              userId: this.lastID,
-            })
+              message: "Erro interno do servidor ao cadastrar usuário.",
+            });
           }
+          console.log(`Usuário ${username} cadastrado com ID: ${this.lastID}`);
+          return res.status(201).json({
+            success: true,
+            message: "Usuário cadastrado com secesso!",
+            userID: this.lastID,
+          })
         }
       );
     }
